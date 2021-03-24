@@ -2,11 +2,17 @@ package br.com.pacato.offers.dto;
 
 import br.com.pacato.offers.model.Pedido;
 
+import javax.validation.constraints.NotBlank;
+
 public class RequisicaoNovoPedido {
 
+    @NotBlank
     private String nomeProduto;
+    @NotBlank
     private String urlProduto;
+    @NotBlank
     private String urlImagem;
+    @NotBlank
     private String descricao;
 
     public RequisicaoNovoPedido(String nomeProduto, String urlProduto, String urlImagem, String descricao) {
@@ -18,6 +24,7 @@ public class RequisicaoNovoPedido {
 
     public Pedido toPedido() {
         Pedido pedido = new Pedido();
+        pedido.setNomeProduto(nomeProduto);
         pedido.setDescricao(descricao);
         pedido.setUrlProduto(urlProduto);
         pedido.setUrlImagem(urlImagem);
