@@ -14,10 +14,10 @@ public class HomeController {
     @GetMapping("/home")
     public String home(Model model){
         Pedido pedido = new Pedido();
-        pedido.setNomeProduto("Vitrola");
-        pedido.setUrlImagem("https://www.google.com");
-        pedido.setUrlProduto("https://www.omni.com");
-        pedido.setDescricao("Produto de qualidade");
+        pedido.setNomeProduto("Oracle Database");
+        pedido.setUrlImagem("https://www.oracle.com/a/ocom/img/rc32-data-management.png");
+        pedido.setUrlProduto("https://www.oracle.com/br/database/");
+        pedido.setDescricao("Banco de dados relacional");
 
         List<Pedido> pedidos = Arrays.asList(pedido);
         model.addAttribute("pedidos", pedidos);
