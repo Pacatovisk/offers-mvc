@@ -20,7 +20,7 @@ public class PedidoController {
     private PedidoService pedidoService;
 
     @GetMapping("formulario")
-    public String formulario() {
+    public String formulario(RequisicaoNovoPedido requisicaoNovoPedido) {
         return "pedido/formulario";
     }
 

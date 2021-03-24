@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 
 public class RequisicaoNovoPedido {
 
-    @NotBlank
+    @NotBlank//Notblank
     private String nomeProduto;
     @NotBlank
     private String urlProduto;
