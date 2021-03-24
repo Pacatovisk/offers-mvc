@@ -18,4 +18,8 @@ public class PedidoService {
         return pedidos;
     }
 
+    public void salvarPedido(Pedido pedido) {
+        Pedido novoPedido = pedidoRepository.save(pedido);
+    }
+
 }
