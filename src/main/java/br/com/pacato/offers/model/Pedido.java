@@ -82,4 +82,20 @@ public class Pedido {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
+    }
 }
