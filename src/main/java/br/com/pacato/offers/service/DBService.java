@@ -2,6 +2,7 @@ package br.com.pacato.offers.service;
 
 import br.com.pacato.offers.model.Pedido;
 import br.com.pacato.offers.model.StatusPedido;
+import br.com.pacato.offers.model.User;
 import br.com.pacato.offers.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
