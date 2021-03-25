@@ -1,9 +1,6 @@
 package br.com.pacato.offers.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -20,11 +17,14 @@ public class Pedido {
     private String urlImagem;
     private String descricao;
 
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
+
     public Pedido() {
 
     }
 
-    public Pedido(Integer id, String nomeProduto, BigDecimal valorNegociado, LocalDate dataDaEntrega, String urlProduto, String urlImagem, String descricao) {
+    public Pedido(Integer id, String nomeProduto, BigDecimal valorNegociado, LocalDate dataDaEntrega, String urlProduto, String urlImagem, String descricao, StatusPedido status) {
         this.id = id;
         this.nomeProduto = nomeProduto;
         this.valorNegociado = valorNegociado;
@@ -32,6 +32,7 @@ public class Pedido {
         this.urlProduto = urlProduto;
         this.urlImagem = urlImagem;
         this.descricao = descricao;
+        this.status = status;
     }
 
     public String getNomeProduto() {
