@@ -1,6 +1,7 @@
 package br.com.pacato.offers.dto;
 
 import br.com.pacato.offers.model.Pedido;
+import br.com.pacato.offers.model.StatusPedido;
 
 import javax.validation.constraints.NotBlank;
 
@@ -29,6 +30,7 @@ public class RequisicaoNovoPedido {
         pedido.setUrlProduto(urlProduto);
         pedido.setUrlImagem(urlImagem);
         pedido.setDescricao(descricao);
+        pedido.setStatus(StatusPedido.AGUARDANDO);
         return pedido;
     }
 

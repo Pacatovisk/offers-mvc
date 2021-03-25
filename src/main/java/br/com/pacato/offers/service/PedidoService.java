@@ -14,7 +14,7 @@ public class PedidoService {
     private PedidoRepository pedidoRepository;
 
     public List<Pedido> listaTodosPedidos() {
-        List<Pedido> pedidos = pedidoRepository.findAll();
+        List<Pedido> pedidos = pedidoRepository.findAll();;
         return pedidos;
     }
 
