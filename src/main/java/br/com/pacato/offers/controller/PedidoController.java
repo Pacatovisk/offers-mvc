@@ -2,6 +2,7 @@ package br.com.pacato.offers.controller;
 
 import br.com.pacato.offers.dto.RequisicaoNovoPedido;
 import br.com.pacato.offers.model.Pedido;
+import br.com.pacato.offers.repository.PedidoRepository;
 import br.com.pacato.offers.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +18,7 @@ import javax.validation.Valid;
 public class PedidoController {
 
     @Autowired
-    private PedidoService pedidoService;
+    private PedidoRepository pedidoRepository;
 
     @GetMapping("formulario")
     public String formulario(RequisicaoNovoPedido requisicaoNovoPedido) {
@@ -30,7 +31,7 @@ public class PedidoController {
             return "pedido/formulario";
         }
         Pedido pedido = requisicao.toPedido();
-        pedidoService.salvarPedido(pedido);
+        pedidoRepository.save(pedido);
         return "redirect:/home";
     }
 }

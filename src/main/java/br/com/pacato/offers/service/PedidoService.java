@@ -1,6 +1,7 @@
 package br.com.pacato.offers.service;
 
 import br.com.pacato.offers.model.Pedido;
+import br.com.pacato.offers.model.StatusPedido;
 import br.com.pacato.offers.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,10 +17,6 @@ public class PedidoService {
     public List<Pedido> listaTodosPedidos() {
         List<Pedido> pedidos = pedidoRepository.findAll();;
         return pedidos;
-    }
-
-    public void salvarPedido(Pedido pedido) {
-        Pedido novoPedido = pedidoRepository.save(pedido);
     }
 
 }
