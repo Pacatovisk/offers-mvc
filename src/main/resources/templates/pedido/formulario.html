@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <title>Home</title>
-    </head>
+    <head th:replace="~{fragmento/base :: head}"></head>
     <body>
+        <div th:replace="~{fragmento/base :: logo}"></div>
         <div class="container">
-            <div class="jumbotron mb-0">
-                <h1 class="display-4">Novo Pedido</h1>
-            </div>
+            <div th:replace="~{fragmento/base :: titulo('Novo Pedido')}"></div>
             <div class="card mt-3">
                 <form th:object="${requisicaoNovoPedido}" class="card-body" action="/pedido/novo" method="POST">
                     <div class="form-group">
                         <label for="nomeProduto">Produto</label>
-                        <input th:field="*{nomeProduto}" th:errorclass="is-invalid" class="form-control" placeholder="nome do produto"/>
+                        <input th:field="*{nomeProduto}" id="nomeProduto" th:errorclass="is-invalid" class="form-control" placeholder="nome do produto"/>
                         <small>Informa qual o nome do produto.</small>
                         <div class="invalid-feedback" th:errors="*{nomeProduto}">
                             Erro no nome do pedido
@@ -22,7 +17,7 @@
                     </div>
                     <div class="form-group">
                         <label for="urlProduto">Url</label>
-                        <input th:field="*{urlProduto}" th:errorclass="is-invalid"   class="form-control" placeholder="url do produto"/>
+                        <input th:field="*{urlProduto}" id="urlProduto" th:errorclass="is-invalid"   class="form-control" placeholder="url do produto"/>
                         <small>Procure em um site o produto que você deseja e cole a url da página aqui.</small>
                         <div class="invalid-feedback" th:errors="*{urlProduto}">
                             Erro na url do produto
@@ -38,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <label for="descricao">Descrição</label>
-                        <textarea th:field="*{descricao}" th:errorclass="is-invalid"  class="form-control" placeholder="Adicione detalhes importantes para ajudar o comprador."></textarea>
+                        <textarea th:field="*{descricao}"  id="descricao" th:errorclass="is-invalid"  class="form-control" placeholder="Adicione detalhes importantes para ajudar o comprador."></textarea>
                         <div class="invalid-feedback" th:errors="*{descricao}">
                             Erro na descriçaõ do produto
                         </div>

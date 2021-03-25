@@ -13,7 +13,6 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private String nomeProduto;
     private BigDecimal valorNegociado;
     private LocalDate dataDaEntrega;
