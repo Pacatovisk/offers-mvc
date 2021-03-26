@@ -20,16 +20,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/h2-console/").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
                 .formLogin(form -> form
                         .loginPage("/login")
+                        .defaultSuccessUrl("/usuario/pedido", true)
                         .permitAll()
                 )
-                .logout(logout -> logout.logoutUrl("/logout"))
-        .csrf().disable();
+                .logout(logout -> logout.logoutUrl("/logout"));
     }
 
     @Bean

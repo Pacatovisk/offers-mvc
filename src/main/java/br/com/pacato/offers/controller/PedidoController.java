@@ -5,7 +5,6 @@ import br.com.pacato.offers.model.Pedido;
 import br.com.pacato.offers.model.User;
 import br.com.pacato.offers.repository.PedidoRepository;
 import br.com.pacato.offers.repository.UserRepository;
-import br.com.pacato.offers.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
