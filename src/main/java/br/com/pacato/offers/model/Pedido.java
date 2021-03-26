@@ -46,6 +46,18 @@ public class Pedido {
         this.status = status;
     }
 
+    public Pedido(Integer id, String nomeProduto, BigDecimal valorNegociado, LocalDate dataDaEntrega, String urlProduto, String urlImagem, String descricao, StatusPedido status, User user) {
+        this.id = id;
+        this.nomeProduto = nomeProduto;
+        this.valorNegociado = valorNegociado;
+        this.dataDaEntrega = dataDaEntrega;
+        this.urlProduto = urlProduto;
+        this.urlImagem = urlImagem;
+        this.descricao = descricao;
+        this.status = status;
+        this.user = user;
+    }
+
     public String getNomeProduto() {
         return nomeProduto;
     }
