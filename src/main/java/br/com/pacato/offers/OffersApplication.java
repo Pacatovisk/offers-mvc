@@ -8,6 +8,7 @@ import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 @EnableCaching
+@EnableAutoConfiguration
 @SpringBootApplication
 public class OffersApplication {
 
