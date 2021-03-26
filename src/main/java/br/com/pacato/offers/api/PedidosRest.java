@@ -1,6 +1,5 @@
 package br.com.pacato.offers.api;
 
-
 import br.com.pacato.offers.model.Pedido;
 import br.com.pacato.offers.model.StatusPedido;
 import br.com.pacato.offers.repository.PedidoRepository;
