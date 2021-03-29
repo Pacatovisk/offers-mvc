@@ -1,8 +1,11 @@
 package br.com.pacato.offers.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Pedido {
@@ -23,9 +26,11 @@ public class Pedido {
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    public User getUser() {
-        return user;
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Oferta> ofertas;
+
+
 
     public void setUser(User user) {
         this.user = user;
@@ -58,17 +63,11 @@ public class Pedido {
         this.user = user;
     }
 
-    public String getNomeProduto() {
-        return nomeProduto;
-    }
 
     public void setNomeProduto(String nomeProduto) {
         this.nomeProduto = nomeProduto;
     }
 
-    public BigDecimal getValorNegociado() {
-        return valorNegociado;
-    }
 
     public void setValorNegociado(BigDecimal valorNegociado) {
         this.valorNegociado = valorNegociado;
@@ -110,9 +109,6 @@ public class Pedido {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public StatusPedido getStatus() {
         return status;
@@ -120,5 +116,12 @@ public class Pedido {
 
     public void setStatus(StatusPedido status) {
         this.status = status;
+    }
+
+    public List<Oferta> getOfertas() {
+        return ofertas;
+    }
+    public void setOfertas(List<Oferta> ofertas) {
+        this.ofertas = ofertas;
     }
 }
