@@ -21,7 +21,7 @@ public class OfertasRest {
     private PedidoRepository pedidoRepository;
 
     @PostMapping
-    public Oferta enviarOferta(@RequestBody RequisicaoNovaOferta requisicao) {
+    public Oferta enviarOferta(@Valid @RequestBody RequisicaoNovaOferta requisicao) {
         Optional<Pedido> pedidoBuscado = pedidoRepository.findById(requisicao.getPedidoId());
         if(!pedidoBuscado.isPresent()) {
             return null;

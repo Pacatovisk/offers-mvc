@@ -109,7 +109,6 @@ public class Pedido {
         return id;
     }
 
-
     public StatusPedido getStatus() {
         return status;
     }
@@ -123,5 +122,21 @@ public class Pedido {
     }
     public void setOfertas(List<Oferta> ofertas) {
         this.ofertas = ofertas;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNomeProduto() {
+        return nomeProduto;
+    }
+
+    public BigDecimal getValorNegociado() {
+        return valorNegociado;
+    }
+
+    public User getUser() {
+        return user;
     }
 }

@@ -11,15 +11,14 @@ import java.time.format.DateTimeFormatter;
 
 public class RequisicaoNovaOferta {
 
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+   private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     private Integer pedidoId;
 
-    //@Pattern(regexp = "^\\d+(\\.\\d+{2})?$")
     @NotNull
     private String valor;
 
-    //@Pattern(regexp = "^\\d{2}/\\d{2}/\\d{4}$")
+    @Pattern(regexp = "^\\d{2}/\\d{2}/\\d{4}$")
     @NotNull
     private String dataDaEntrega;
 
