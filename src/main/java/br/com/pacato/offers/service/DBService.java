@@ -5,6 +5,7 @@ import br.com.pacato.offers.model.StatusPedido;
 import br.com.pacato.offers.repository.PedidoRepository;
 import br.com.pacato.offers.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;

@@ -4,7 +4,6 @@ import br.com.pacato.offers.model.Pedido;
 import br.com.pacato.offers.model.StatusPedido;
 import br.com.pacato.offers.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;

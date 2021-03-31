@@ -21,7 +21,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()
                 .antMatchers("/home/**").permitAll()
-                .antMatchers("/h2-console/**").permitAll()
+                .antMatchers("localhost:8080/h2-console/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -39,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public UserDetailsService userDetailsService() {
         UserDetails user =
-                User.withDefaultPasswordEncoder().username("admin").password("admin").roles("admin").build();
+                User.withDefaultPasswordEncoder().username("admin").password("admin").roles("ADMIN").build();
         return new InMemoryUserDetailsManager(user);
     }
 }
