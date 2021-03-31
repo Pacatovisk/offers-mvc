@@ -32,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 )
                 .logout(logout -> {
                     logout.logoutUrl("/logout").logoutSuccessUrl("/home");
-                });
+                }).csrf().disable();
     }
 
     @Bean
@@ -42,4 +42,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 User.withDefaultPasswordEncoder().username("admin").password("admin").roles("ADMIN").build();
         return new InMemoryUserDetailsManager(user);
     }
+
 }
