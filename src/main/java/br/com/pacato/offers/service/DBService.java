@@ -29,7 +29,8 @@ public class DBService {
         Pedido pedido4 = new Pedido(null, "Oracle Database", BigDecimal.valueOf(3232), LocalDate.now(), "https://www.oracle.com/br/database/", "https://www.oracle.com/a/ocom/img/rc32-data-management.png", "Oracle database é um dos melhores do mercado!", StatusPedido.ENTREGUE);
         Pedido pedido5 = new Pedido(null, "Oracle Database", BigDecimal.valueOf(3232), LocalDate.now(), "https://www.oracle.com/br/database/", "https://www.oracle.com/a/ocom/img/rc32-data-management.png", "Oracle database é um dos melhores do mercado!", StatusPedido.APROVADO);
         Pedido pedido6 = new Pedido(null, "Oracle Database", BigDecimal.valueOf(3232), LocalDate.now(), "https://www.oracle.com/br/database/", "https://www.oracle.com/a/ocom/img/rc32-data-management.png", "Oracle database é um dos melhores do mercado!", StatusPedido.AGUARDANDO);
-        pedidoRepository.saveAll(Arrays.asList(pedido1,pedido2, pedido3,pedido4, pedido5, pedido6));
+        Pedido pedido7 = new Pedido(null, "AWS", BigDecimal.valueOf(1200), LocalDate.now(), "https://aws.amazon.com/", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png", "AWS é excelente para deploy de aplicações!", StatusPedido.ENTREGUE);
+        pedidoRepository.saveAll(Arrays.asList(pedido1,pedido2, pedido3,pedido4, pedido5, pedido6, pedido7));
 
     }
 }
